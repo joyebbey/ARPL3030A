@@ -34,7 +34,7 @@
       border-radius: 10px;
       width: 400px;
       height: 300px;
-      padding: 20px ;
+      padding: 20px;
       border-radius: 25px;
     }
     h2 {
@@ -48,7 +48,9 @@
       padding-bottom: 10px;
       margin-bottom: 30px;
     }
-
+    .image-container0:hover img {
+      transform: none; /* Remove the scaling effect */
+    }
     .container {
       max-block-size: 80px;
       background-color: rgba(191, 12, 0, 0.7);
@@ -68,9 +70,8 @@
 
     .introduction {
       text-align: center;
-      padding: 10px;
       margin: 20px;
-      background-color: rgba(189, 24, 12, 1);
+      background-color: rgba(189, 24, 12, 0.5);
       border-radius: 10px;
       position: relative;
       overflow: hidden;
@@ -79,12 +80,12 @@
       max-width: 1200px;
       margin-top: 10px;
       margin: 0 auto;
-      padding-right: 10px;
-      padding-bottom: 0px;
-      padding-top: 0px auto;
       margin-bottom: 30px;
       box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-      border-radius: 20px;
+      border-radius: 10px;
+      padding-top: 0%;
+      padding-left: 20px;
+      max-height: 550px;
     }
     .pulses {
       text-align: center;
@@ -115,17 +116,36 @@
       height: 100%;
       background: rgba(189, 24, 12, 0.7);
       transform-origin: center;
-      transform: scale(0);
+      transform: scale(0.1);
       transition: transform 0.5s ease-in-out;
     }
 
     img:hover::before {
-      transform: scale(1.5);
+      transform: scale(0.1);
     }
 
     img:hover {
       background-color: rgba(189, 24, 12, 0.7);
       box-shadow: 0 0 20px rgb(191, 12, 0);
+    }
+    .image-container0 {
+      position: relative;
+      width: 500px;
+      height: 400px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .image-container0 img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    .image-container0:hover img {
+      transform: none; /* Remove the scaling effect */
     }
     .intro-text {
       font-size: 100px;
@@ -209,7 +229,10 @@
     .footer {
       font-size: small;
       text-align: center;
-      padding: 10px ;
+      padding: 10px;
+    }
+    map:hover {
+      transform: none;
     }
   </style>
   <body>
@@ -217,24 +240,29 @@
       <h1>Urban Rhythms</h1>
     </div>
 
-    <h2>
-      The Pulse of Johannesburg South
-    </h2>
-        <div class="introduction">
+    <h2>The <em> Pulse </em> of Johannesburg South</h2>
+    <div class="introduction">
       <h3 class="intro-text">
-        Johannesburg South
+        <strong> Johannesburg South</strong>
         <br />
         <p class="introfiller-text">
-          Explore Johannesburg South, where every street, business, and community engagement creates a living symphony of urban rhythms.
-          <br>
-          Nestled in the southern precincts of Johannesburg, South Africa, Johannesburg South encapsulates the vibrant pulse of the city's urban rhythms. This dynamic region, harmoniously blending residential, commercial, and cultural spaces, becomes a focal point for our exploration of the diverse beats that collectively compose the symphony of Johannesburg's southern landscapes.
+          Explore Johannesburg South, where every street, business, and
+          community engagement creates a living symphony of urban rhythms.
+          <br />
+          Nestled in the southern precincts of Johannesburg, South Africa,
+          Johannesburg South encapsulates the vibrant pulse of the city's urban
+          rhythms. This dynamic region, harmoniously blending residential,
+          commercial, and cultural spaces, becomes a focal point for our
+          exploration of the diverse beats that collectively compose the
+          symphony of Johannesburg's southern landscapes.
         </p>
       </h3>
-      <img
-        class="image-container0"
-        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/116/831/original/7F773159-06CE-4A3B-91AF-5E48AB79EE4C.JPEG?1709019950"
-        alt=""
-      />
+      <map name="JoburgSouth">
+        <img
+          class="image-container0"
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/116/841/original/Screenshot_2024-02-26_at_21.48.57.png?1709025832"
+          alt=""
+      /></map>
     </div>
 
     <div class="pulses">
@@ -255,13 +283,17 @@
         alt=""
       />
     </div>
-<div class="pulses">
+    <div class="pulses">
       <h3 class="pulses-text">
         Economic Beats:
         <br />
         <p class="describe-text">Each Business a Note in Joburg's Pulse</p>
         <p class="filler-text">
-          From the lively hustle of street vendors offering vibrant goods to the inviting storefronts showcasing diverse offerings, businesses weave a dynamic tapestry. In Johannesburg, there's always a rhythmic connection within reach, each business playing a unique note in the city's vibrant economic symphony
+          From the lively hustle of street vendors offering vibrant goods to the
+          inviting storefronts showcasing diverse offerings, businesses weave a
+          dynamic tapestry. In Johannesburg, there's always a rhythmic
+          connection within reach, each business playing a unique note in the
+          city's vibrant economic symphony
         </p>
       </h3>
       <img
@@ -287,7 +319,7 @@
 
         setInterval(changeImage, 10000);
       });
-            document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", function () {
         var images = [
           "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/116/826/original/1C93A55E-FBA9-405C-AD43-1A0E0ECCB2EF_2.JPEG?1709018998",
           "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/116/825/original/40DD4C2B-3B84-49C4-9280-3C072F7ECCFB_2.JPEG?1709018986",
@@ -300,10 +332,10 @@
           imageIndex = (imageIndex + 1) % images.length;
         }
 
-        setInterval(changeImage, 10000);
+        setInterval(changeImage, 10050);
       });
     </script>
-      <h2 class="footer">
+    <h2 class="footer">
       Joy Ebbey | 2400652 | URBAN RHYTHMS | ARPL3030A | 2024
     </h2>
   </body>
